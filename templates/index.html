@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Detector</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🔐 Phishing URL Detector</h1>
+    <p class="subtitle">AI-powered security analysis</p>
+
+    <form method="POST" onsubmit="showLoader()">
+        <input type="text" name="url" placeholder="Enter URL (https://...)" required>
+        <button type="submit" id="analyzeBtn">Analyze</button>
+    </form>
+
+    <!-- Loader -->
+    <div id="loader" class="loader">
+        <div class="spinner"></div>
+        <p>Scanning URL...</p>
+    </div>
+
+    {% if result %}
+    <div id="resultBox" class="result-box {{ risk_level }}">
+        
+        <h2 id="resultText">
+            {% if "Safe" in result %}
+                ✅ {{ result }}
+            {% elif "Suspicious" in result %}
+                ⚠️ {{ result }}
+            {% elif "High Risk" in result %}
+                🚨 {{ result }}
+            {% else %}
+                ❌ {{ result }}
+            {% endif %}
+        </h2>
+
+        {% if confidence %}
+            <p>Confidence: {{ confidence }}%</p>
+        {% endif %}
+
+        {% if risk_level %}
+            <p class="risk">Risk Level: {{ risk_level }}</p>
+        {% endif %}
+
+        {% if reasons %}
+            <ul class="reasons">
+                {% for r in reasons %}
+                    <li>• {{ r }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+    </div>
+    {% endif %}
+</div>
+
+<script>
+function showLoader() {
+    document.getElementById("loader").style.display = "block";
+    document.getElementById("analyzeBtn").disabled = true;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const loader = document.getElementById("loader");
+    if (loader) loader.style.display = "none";
+
+    const resultText = document.getElementById("resultText");
+    if (resultText && resultText.innerText.includes("High Risk")) {
+        navigator.vibrate?.(200);
+    }
+});
+</script>
+
+</body>
+</html>

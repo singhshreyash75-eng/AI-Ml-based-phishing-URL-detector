@@ -1,0 +1,163 @@
+/* 🌌 Base Layout */
+body {
+margin: 0;
+padding: 0;
+font-family: 'Segoe UI', sans-serif;
+background: linear-gradient(135deg, #0f172a, #1e293b);
+color: white;
+text-align: center;
+}
+
+.container {
+margin-top: 120px;
+}
+
+/* 🧠 Headings */
+h1 {
+font-size: 40px;
+margin-bottom: 10px;
+}
+
+.subtitle {
+color: #94a3b8;
+margin-bottom: 30px;
+}
+
+/* 🔍 Input */
+input {
+padding: 14px;
+width: 350px;
+border-radius: 8px;
+border: none;
+outline: none;
+font-size: 16px;
+transition: 0.3s;
+}
+
+input:focus {
+box-shadow: 0 0 8px #22c55e;
+}
+
+/* 🔘 Button */
+button {
+padding: 14px 20px;
+margin-left: 10px;
+background: #22c55e;
+border: none;
+border-radius: 8px;
+color: white;
+font-size: 16px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+button:hover {
+background: #16a34a;
+}
+
+button:disabled {
+background: gray;
+cursor: not-allowed;
+}
+
+/* 📦 Result Box */
+.result-box {
+margin-top: 30px;
+padding: 20px;
+border-radius: 15px;
+display: inline-block;
+text-align: center;
+background: rgba(255,255,255,0.1);
+backdrop-filter: blur(10px);
+transition: all 0.4s ease;
+min-width: 300px;
+}
+
+/* 🟢 SAFE */
+.low {
+background: rgba(0, 255, 100, 0.1);
+border: 2px solid #00ff88;
+animation: glowGreen 1.5s ease-in-out;
+}
+
+/* 🟡 SUSPICIOUS */
+.medium {
+background: rgba(255, 200, 0, 0.1);
+border: 2px solid #ffcc00;
+animation: shake 0.4s;
+}
+
+/* 🔴 HIGH RISK */
+.high {
+background: rgba(255, 0, 0, 0.15);
+border: 2px solid red;
+animation: flashRed 0.6s;
+}
+
+/* ⚫ INVALID */
+.invalid {
+background: rgba(150, 150, 150, 0.2);
+border: 2px solid gray;
+animation: shake 0.5s;
+}
+
+/* 🎬 Animations */
+
+/* Shake */
+@keyframes shake {
+0% { transform: translateX(0); }
+25% { transform: translateX(-6px); }
+50% { transform: translateX(6px); }
+75% { transform: translateX(-4px); }
+100% { transform: translateX(0); }
+}
+
+/* Glow Green */
+@keyframes glowGreen {
+0% { box-shadow: 0 0 0px #00ff88; }
+50% { box-shadow: 0 0 20px #00ff88; }
+100% { box-shadow: 0 0 0px #00ff88; }
+}
+
+/* Flash Red */
+@keyframes flashRed {
+0% { background: rgba(255, 0, 0, 0.6); }
+100% { background: rgba(255, 0, 0, 0.15); }
+}
+
+/* 🔄 Loader */
+.loader {
+display: none;
+margin-top: 20px;
+text-align: center;
+color: white;
+}
+
+.spinner {
+width: 40px;
+height: 40px;
+border: 5px solid #ccc;
+border-top: 5px solid #22c55e;
+border-radius: 50%;
+margin: auto;
+animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+/* 📋 Reasons List */
+.reasons {
+margin-top: 10px;
+text-align: left;
+font-size: 14px;
+color: #ddd;
+}
+
+/* 🧾 Risk Text */
+.risk {
+font-weight: bold;
+margin-top: 8px;
+}
