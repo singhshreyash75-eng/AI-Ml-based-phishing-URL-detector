@@ -38,19 +38,6 @@ An intelligent web-based system that detects whether a URL is **Safe**, **Suspic
 
 ![Lock](images/lock.png)
 
-> 📌 *Add your screenshots inside an `images/` folder in the repo*
-
----
-
-## 🎥 Demo Video (Optional)
-
-You can add a demo video link here:
-
-```id="demo01"
-https://your-demo-link.com
-```
-
----
 
 ## 🎯 Features
 
@@ -193,5 +180,5 @@ A **mini real-world phishing detection system** combining **AI + security engine
 
 ## 👨‍💻 Author
 
-**Your Name**
+Shreyash Singh
 B.Tech CSE (AI/ML)
