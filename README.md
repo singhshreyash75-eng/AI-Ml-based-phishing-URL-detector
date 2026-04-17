@@ -180,5 +180,5 @@ A **mini real-world phishing detection system** combining **AI + security engine
 
 ## 👨‍💻 Author
 
-Shreyash Singh
+Shreyash Singh ,
 B.Tech CSE (AI/ML)
